@@ -1,0 +1,109 @@
+h1{
+    margin: 25px 0;
+}
+
+form{
+    /* background-color: rgb(121, 93, 93); */
+    padding: 20px 20px;
+}
+
+.form-group input{
+    border: 2px solid black;
+    outline: none;
+    padding: 10px 45px;
+}
+
+.form-group input::placeholder{
+    font-size: 14px;
+    color: gray;
+    
+}
+
+.form-group input:focus{
+    outline: none;
+    cursor: pointer; 
+}
+
+label{
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 0px 0px 5px 0px;
+    color: #000;
+}
+
+/* Radio Buttton Styles */
+.inline-radio{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.radio{
+    justify-items: flex-start;
+    align-self: flex-start;
+}
+
+
+/* Icon Styles */
+
+.field .form-group{
+    position: relative;
+}
+
+.field i{
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    font-size: 18px;    
+}
+
+.field .icon{
+    left: 15px;
+}
+
+.field .error-icon{
+    right: 15px;
+}
+
+.field .icon-eye{
+    right: 35px;
+}
+eye{
+    position: absolute;
+}
+
+.see-password, .see-password2{
+    display: none;
+}
+
+/* Error Msg Styles */
+
+.field .error-txt{
+    margin-top: 5px;
+    color: red;
+}
+
+.field .error{
+    display: none;
+}
+
+.field.error .error{
+    display: block;
+}
+
+.field.error input{
+    border-color: red;
+}
+
+.field.sucess input{
+    border-color: green;
+}
+
+.field .error-icon{
+    color: red;
+}
+
+
+
