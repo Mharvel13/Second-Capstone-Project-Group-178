@@ -1,3 +1,33 @@
+
+// Hamburger Navbar
+var disp_val = 1;
+
+function dropdown(){
+    var display = document.getElementById("dropdown").style;
+
+    var size = screen.width;
+    if (size < 460){
+        if (disp_val == 1){
+            display.display = "block";
+            disp_val = 0;
+        }
+    
+        else{
+            display.display = "none";
+            disp_val = 1;
+        }
+    }
+}
+
+window.addEventListener("resize", function(){
+    var win_size = screen.width;
+    if (win_size > 460){
+        document.getElementById("dropdown").style.display = "inline";
+    }
+});
+
+
+// Form Validation Styles
 const form = document.querySelector('form');
 
 const usernameField = form.querySelector('.username');
@@ -95,7 +125,13 @@ form.onsubmit = (e)=>{
 
     function checkUsername(){
         let userErrorText = usernameField.querySelector(".error-txt");
-        if(usernameInput.value ==''){
+        let usernamePattern = /^[A-Za-z]+$/;
+        if(!usernameInput.value.match(usernamePattern)){
+            usernameField.classList.add('error');
+            usernameField.classList.remove('sucess');
+            userErrorText.innerHTML = ' Username can only contain letters, PleaseEnter a Valid usename';
+
+        }else if(usernameInput.value ==''){
             usernameField.classList.add('error');
 
         } else if(usernameInput.value =='username'){
@@ -127,7 +163,6 @@ form.onsubmit = (e)=>{
         if(!emailInput.value.match(emailPattern)){
            emailField.classList.add('error');
             emailField.classList.remove('sucess');
-
             emailErrorText.innerHTML = 'Enter a Valid email address';
 
         }else{
@@ -137,7 +172,14 @@ form.onsubmit = (e)=>{
         }
 
     }
+    /*
+   if(!usernameInput.value.match(usernamePattern))
+     {
+      usernameField.classList.add('error');
+            usernameField.classList.remove('sucess');
+            usernameErrorText.innerHTML = 'Enter a Valid usename';
     
+    */
 
     phoneInput.onkeyup = () =>{
         checkPhone();
@@ -145,13 +187,24 @@ form.onsubmit = (e)=>{
     }
 
     function checkPhone(){
+        let phonePattern = /^\d{11}$/;
         let phoneErrorText = phoneField.querySelector(".error-txt");
-        if(phoneInput.value == ''){
-            phoneField.classList.add('error');
-        }else if(phoneInput.value.length < 10){
+        if(!phoneInput.value.match(phonePattern)){
+
             phoneField.classList.add('error');
             phoneField.classList.remove('sucess');
             phoneErrorText.innerHTML = 'Enter a Valid phone Number';
+        }
+        else if(phoneInput.value == ''){
+            phoneField.classList.add('error');
+            phoneField.classList.remove('sucess');
+            phoneErrorText.innerHTML = 'Phone Number cannot be blank';
+
+        }
+        else if(!phoneInput.value.length > 11){
+            phoneField.classList.add('error');
+            phoneField.classList.remove('sucess');
+            phoneErrorText.innerHTML = 'Phone Number must not be more than 11 digits';
         }else{
             phoneField.classList.remove('error');
             phoneField.classList.add('sucess');

@@ -1,10 +1,98 @@
+/* Navbar Styles */
+nav{
+    width: 100%;
+    background-color: rgb(209, 209, 209);
+}
+
+#top-nav{
+    background-color: rgb(235, 223, 231);
+    padding: 15px 10px;
+}
+
+
+a{
+    color: black;
+    text-decoration: none;
+    padding: 0 3%;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+a:hover{
+    color: coral;
+    text-decoration: underline;
+}
+
+#nav-menu{
+    display: none;
+}
+
+#nav-menu:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#dropdown ul{
+    display: inline;
+}
+
+#dropdown li{
+    list-style: none;
+    display: inline;
+}
+
+#dropdown{
+    display: inline;
+}
+
+.active{
+    display: inline;
+    background-color: black;
+    color: white;
+    padding: 8px;
+}
+
+
+/* Navbar On smaller Devices */
+@media screen and (max-width: 500px){
+    #dropdown ul{
+        display: inline;
+    }
+    
+    #dropdown li{
+        display: block;
+        padding: 5px 0;
+    }
+    
+    #dropdown{
+        display: none;
+    }
+
+    #nav-menu{
+        display: inline;
+    }
+
+    form{
+        background-color: rgb(235, 223, 231);
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: 20px 20px;
+        margin: 20px;
+        box-shadow: 0 1px 1px 1px gray;
+    }
+}
+
 h1{
     margin: 25px 0;
 }
 
+/* Form added styles */
 form{
-    /* background-color: rgb(121, 93, 93); */
+    background-color: rgb(235, 223, 231);
+    border: 2px solid black;
+    border-radius: 20px;
     padding: 20px 20px;
+    box-shadow: 0 1px 20px 1px gray;
 }
 
 .form-group input{
@@ -44,8 +132,18 @@ label{
     justify-items: flex-start;
     align-self: flex-start;
 }
+input[type="submit"]{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bolder;
 
+}
 
+input[type="submit"]:hover{
+    background-color: coral;
+    transition: 2s;
+
+}
 /* Icon Styles */
 
 .field .form-group{
