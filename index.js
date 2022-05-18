@@ -134,11 +134,10 @@ form.onsubmit = (e)=>{
         }else if(usernameInput.value ==''){
             usernameField.classList.add('error');
 
-        } else if(usernameInput.value =='username'){
+        } else if(usernameInput.value ==='username'){
             usernameField.classList.add("error")
             usernameField.classList.remove("sucess")
-
-            userErrorText.innerHTML = "username cannot be username";
+            userErrorText.innerHTML = "Username cannot be 'username'";
         }
         else if(usernameInput.value.length < 5){
             usernameField.classList.add("error")
@@ -172,14 +171,7 @@ form.onsubmit = (e)=>{
         }
 
     }
-    /*
-   if(!usernameInput.value.match(usernamePattern))
-     {
-      usernameField.classList.add('error');
-            usernameField.classList.remove('sucess');
-            usernameErrorText.innerHTML = 'Enter a Valid usename';
-    
-    */
+
 
     phoneInput.onkeyup = () =>{
         checkPhone();
@@ -225,6 +217,11 @@ form.onsubmit = (e)=>{
             passwordField.classList.add('error');
             passwordField.classList.remove('sucess');
            passwordErrorText.innerHTML = 'password must be more than 8 characters';
+
+        } else if(passwordInput.value ==='password'){
+            passwordField.classList.add("error")
+            passwordField.classList.remove("sucess")
+            passwordErrorText.innerHTML = "Password cannot be 'password'";
         }else{
             passwordField.classList.remove('error');
             passwordField.classList.add('sucess');
